@@ -17,6 +17,8 @@
     username = 'lilemoji', // rudrastyh - my username :)
     num_photos = 20;
 
+  const classes = ["item--medium", "item--large", "item--full"];
+
   $.ajax({ // the first ajax request returns the ID of user rudrastyh
     url: 'https://api.instagram.com/v1/users/search',
     dataType: 'jsonp',
@@ -32,8 +34,10 @@
         success: function (data2) {
           console.log(data2);
           for (x in data2.data) {
+            var sizeClass = classes[Math.floor(Math.random() * classes.length)]
             var item = document.createElement('div');
-            item.classList.add('item');
+            item.classList += `item ${sizeClass}`;
+            // item.classList.add('item, item item--large');
             $(item).css('background-image', `url(${data2.data[x].images.thumbnail.url})`);
             // itemHtml += '</div>'
             $('.grid').append(item);
