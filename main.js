@@ -34,11 +34,12 @@
         success: function (data2) {
           console.log(data2);
           for (x in data2.data) {
+            // debugger;
             var sizeClass = classes[Math.floor(Math.random() * classes.length)]
             var item = document.createElement('div');
             item.classList += `item ${sizeClass}`;
             // item.classList.add('item, item item--large');
-            $(item).css('background-image', `url(${data2.data[x].images.thumbnail.url})`);
+            $(item).css('background-image', `url(${data2.data[x].images.standard_resolution.url})`);
             // itemHtml += '</div>'
             $('.grid').append(item);
           }
