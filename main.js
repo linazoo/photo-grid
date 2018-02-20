@@ -15,7 +15,7 @@
 
   var token = '7060436.be13e05.6691ed79dd50421f95a09dc182c3fb10',
     username = 'lilemoji', // rudrastyh - my username :)
-    num_photos = 100;
+    num_photos = 33;
 
   const classes = ["item--medium", "item--large"];
 
